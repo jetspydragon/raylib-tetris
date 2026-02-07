@@ -1,0 +1,33 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "desktop-debug",
+      "displayName": "Desktop (Debug)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/desktop-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "desktop-release",
+      "displayName": "Desktop (Release)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/desktop-release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "emscripten",
+      "displayName": "Emscripten (Web)",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/build/emscripten",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "C:/c/lib/emsdk/upstream/emscripten/cmake/Modules/Platform/Emscripten.cmake",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ]
+}
