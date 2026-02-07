@@ -2,6 +2,7 @@
 #include <raylib.h>
 
 #include "grid.h"
+#include "blocks.cpp"
 
 int main(void)
 {
@@ -12,18 +13,16 @@ int main(void)
     SetTargetFPS(60);
 
     Grid grid = Grid();
-    grid.grid[0][0] = 1;
-    grid.grid[10][5] = 3;
-    grid.grid[10][6] = 3;
-    grid.grid[11][6] = 3;
-    grid.grid[15][3] = 6;
     grid.print();
+
+    ZBlock block = ZBlock();
     while(!WindowShouldClose())
     {
         BeginDrawing();
         ClearBackground(darkBlue);
 
         grid.draw(0, 0);
+        block.draw();
 
         EndDrawing();
     }

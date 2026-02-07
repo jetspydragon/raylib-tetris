@@ -12,7 +12,6 @@ public:
     void draw(int x, int y) const;
     int grid[20][10];
 private:
-    std::vector<Color> getCellColors();
     int numRows;
     int numCols;
     int cellSize;
