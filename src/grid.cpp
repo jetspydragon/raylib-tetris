@@ -35,7 +35,7 @@ void Grid::print() const
     }
 }
 
-void Grid::draw(int x, int y) const
+void Grid::draw() const
 {
     for(int row = 0; row < numRows; row++)
     {
@@ -44,12 +44,17 @@ void Grid::draw(int x, int y) const
             int cellValue = grid[row][col];
             Color cellColor = colors[cellValue];
             DrawRectangle(
-                x + col * cellSize, 
-                y + row * cellSize, 
+                col * cellSize, 
+                row * cellSize, 
                 cellSize - 1, 
                 cellSize - 1, 
                 cellColor
             );
         }
     }
+}
+
+bool Grid::isCellOutside(int row, int col) const
+{
+    return !(row >= 0 && col >= 0 && row < numRows && col < numCols);
 }
