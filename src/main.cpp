@@ -15,7 +15,7 @@ int main(void)
     Grid grid = Grid();
     grid.print();
 
-    ZBlock block = ZBlock();
+    IBlock block = IBlock();
     while(!WindowShouldClose())
     {
         BeginDrawing();

@@ -9,7 +9,7 @@ Block::Block()
 
 void Block::draw() const
 {
-    auto& tiles = cells.at(rotationState);
+    const auto& tiles = getCellPositions();
     for(const Position& pos : tiles)
     {
         DrawRectangle(
@@ -20,4 +20,21 @@ void Block::draw() const
             colors[id]
         );
     }
+}
+
+void Block::move(int row, int col)
+{
+    rowOffset += row;
+    colOffset += col;
+}
+
+std::vector<Position> Block::getCellPositions() const
+{
+    std::vector<Position> tiles = cells.at(rotationState);
+    for(Position& tile : tiles)
+    {
+        tile.col += colOffset;
+        tile.row += rowOffset;
+    }
+    return tiles;
 }
