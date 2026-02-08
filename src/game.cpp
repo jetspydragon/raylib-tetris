@@ -68,14 +68,17 @@ void Game::handleInput()
     case KEY_DOWN:
         moveBlockDown();
         break;
-    
+    case KEY_UP:
+        rotateBlock();
+        break;
     }
 }
 
 void Game::moveBlockLeft()
 {
     currentBlock.move(0, -1);
-    if (isBlockOutside()) {
+    if (isBlockOutside()) 
+    {
         currentBlock.move(0, 1);
     }
 }
@@ -83,7 +86,8 @@ void Game::moveBlockLeft()
 void Game::moveBlockRight()
 {
     currentBlock.move(0, 1);
-    if (isBlockOutside()) {
+    if (isBlockOutside()) 
+    {
         currentBlock.move(0, -1);
     }
 }
@@ -91,7 +95,17 @@ void Game::moveBlockRight()
 void Game::moveBlockDown()
 {
     currentBlock.move(1, 0);
-    if (isBlockOutside()) {
+    if (isBlockOutside())
+    {
         currentBlock.move(-1, 0);
+    }
+}
+
+void Game::rotateBlock()
+{
+    currentBlock.rotate();
+    if (isBlockOutside())
+    {
+        currentBlock.undoRotate();
     }
 }

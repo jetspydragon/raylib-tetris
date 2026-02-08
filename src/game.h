@@ -14,6 +14,7 @@ public:
     void moveBlockLeft();
     void moveBlockRight();
     void moveBlockDown();
+    void rotateBlock();
 private:
     std::vector<Block> blocks;
     std::vector<Block> createAllBlocks();

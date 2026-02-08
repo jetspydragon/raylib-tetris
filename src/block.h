@@ -12,6 +12,8 @@ public:
     virtual ~Block() = default;
     void draw() const;
     void move(int row, int col);
+    void rotate();
+    void undoRotate();
     std::vector<Position> getCellPositions() const;
     int id;
     std::map<int, std::vector<Position>> cells;
